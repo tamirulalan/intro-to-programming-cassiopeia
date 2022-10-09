@@ -1,6 +1,6 @@
 const today = new Date();
 const thisYear =today.getFullYear();
- const man =document.querySelector("#man");
+ const man =document.querySelector("#myFooter");
  const paragraph =document.createElement('p');
  //paragraph.textContent =
  
@@ -33,6 +33,37 @@ const messageList =messageSection.querySelector("ul");
 const newMessage=document.createElement("li");
 const removeButton=document.createElement("button");
 
+//create the editButton using createElement
+ const editButton = document.createElement("button");
+//give name for editButton
+editButton.innerHTML = "Edit";
+//add eventListner (click....function())
+editButton.addEventListener("click",function() {
+  const Edit =editButton.parentNode;
+  console.log(Edit);
+  //Edit.contentEditable = true;
+  if(editButton.textContent === "Edit") {
+    const span = Edit.childNodes[1];
+    const input = document.createElement("input");
+    console.log("test input:", input);
+    input.type = "text";
+    input.value = span.textContent;
+    Edit.insertBefore(input, span);
+    Edit.removeChild(span);
+    editButton.textContent = "Save";
+  } else if(editButton.textContent === "Save") {
+    const input = Edit.childNodes[1];
+    const span = document.createElement("span");
+    span.textContent = input.value;
+    Edit.insertBefore(span, input);
+    Edit.removeChild(input);
+    editButton.textContent = "Edit";
+  }
+});
+//edit and save
+
+
+removeButton.setAttribute("class", "removeBtn"); //To set attribute of the class to its value
 const aTag = document.createElement("a");
 
 aTag.href = `mailto:${emailForm}`;
@@ -43,10 +74,12 @@ removeButton.addEventListener("click",function() {
   const entry =removeButton.parentNode
   entry.remove()
 });
+
 const spanElement=document.createElement("span");
 spanElement.innerHTML=` wrote: ${messageInput} `;
 newMessage.appendChild(aTag);
 newMessage.appendChild(spanElement);
+newMessage.appendChild(editButton);
 newMessage.appendChild(removeButton);
 messageList.appendChild(newMessage);
 
