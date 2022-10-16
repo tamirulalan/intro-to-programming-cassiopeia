@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>First Web by Tamiru Taye</title>
-    <link rel="stylesheet"
-    href=""C:\Users\hanie\OneDrive\Desktop\re\action\css\style.css"" />
+    <link rel="stylesheet" href="css/Index.css" />
     <script src="index.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <section>
       <h1>About</h1>
       <img
-        src="C:\Users\hanie\OneDrive\Desktop\codethedream\html\images\me2.png"
-        alt="tamiru and his son swimming"
+        src="C:\Users\hanie\intro-to-programming\intro-to-programming-cassiopeia\image\TT.jpg"
+        alt="it is my photo three years ago"
         class="photo"
       />
       <p>
@@ -24,14 +24,21 @@
     </section>
     <section>
       <h1>Experience</h1>
-      <p>
+      <ul class="experienceList">
+        <li>supervisor</li>
+        <li>lecturer</li>
+        <li>Operator</li>
+        <li>Machinist</li>
+        <li>student</li>
+      </ul>
+      <!-- <p>
         I worked as production suppervisor for addisprefab in Ethiopia, as a
         lecturer and currently working as CNC machist and programmer Connect
-      </p>
+      </p> -->
     </section>
     <section id="skill">
       <!-- <div id="skill"> -->
-      <h2>skills</h2>
+      <h2>Skills</h2>
       <ul></ul>
       <!-- </div> -->
     </section>
@@ -43,26 +50,32 @@
     <section>
       <h2>Leave a message</h2>
       <form class="leave_Message">
-        <label for="name">name</label>
-        <br />
-        <input type="text" name="name" id="name" required />
-        <br />
-        <label for="email">email</label>
-        <br />
-        <input type="email" name="email" id="email" required />
-        <br />
-        <label for="message">message</label>
-        <br />
-        <textarea name="message" required></textarea>
-        <br />
-        <button type="submit">submit</button>
+        <div class="formField">
+          <label for="name">Name</label>
+          <br />
+          <input type="text" name="name" id="name" required />
+          <br />
+        </div>
+        <div class="formField">
+          <label for="email">Email</label>
+          <br />
+          <input type="email" name="email" id="email" required />
+          <br />
+        </div>
+        <div class="formField">
+          <label for="message">Message</label>
+          <br />
+          <textarea name="message" required></textarea>
+          <br />
+        </div>
+        <button type="submit">SUBMIT</button>
       </form>
     </section>
     <section id="message">
       <h2>Message</h2>
       <ul></ul>
     </section>
-    <footer id="man">
+    <footer id="myFooter">
       <!-- <div id="man"></div> -->
     </footer>
   </body>
