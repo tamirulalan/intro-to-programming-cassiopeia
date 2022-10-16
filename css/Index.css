@@ -4,6 +4,11 @@ body {
     font-size: 21px;
     font-family: 'Times New Roman';
 }
+
+.photo {
+   border-radius: 50%;
+}
+
 section {
    padding: 5px;
    margin: 10px;
