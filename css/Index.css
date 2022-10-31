@@ -1,109 +1,194 @@
 body {
-    background-color: rgb(250, 228, 207);
-    color:rgb(17, 17, 17);
-    font-size: 21px;
-    font-family: 'Times New Roman';
+   background-color: rgb(239, 237, 236);
+   color:rgb(17, 17, 17);
+   font-size: 21px;
+   font-family: 'Times New Roman';
+   margin: 0px;
+   
 }
 
-.photo {
-   border-radius: 50%;
+.navBar {
+background-color: rgb(194, 217, 224);
+display: flex;
+top: 0;
+padding: 0;
+width: 100%;
+margin-bottom: 18px;
+justify-content: space-between;
+
 }
 
+.navList  {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: flex-end;
+ 
+}
+
+.navList li {
+display: inline;
+padding: 14px 16px;
+border-right: 1px solid white;
+}
+
+.navList li a {
+text-decoration: none;
+color:white
+
+}
+.navList li a:hover {
+  color: black;
+}
+
+.profile {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sura {
+  border-radius: 50%;
+  height: 70px;
+  
+}
 section {
-   padding: 5px;
-   margin: 10px;
-}
-
-h1,h2 {
-   font-weight: 600;
-   margin-bottom: 0.5rem;
-   color: rgb(42, 36, 48);
-   font-size: 30px;
-}
-
-#skill li {
-   display: inline-block;
-   border: 3px solid blue;
-   padding: 10px;
-   margin: 20px;
-   width: 80px;
-} 
-
-.leave_Message {
-   font-size: 21px;
-   color: blueviolet;
-}
-
-label {
-   font-size: 25px;
-   color: brown; 
-}
-
-textarea, input {
-   font-size: 21px;
-   padding: 5px;
-   border: 2px solid black;
-}
-
-.experienceList li{
-  display: block;
-  background-color: aqua; 
-  border: 2px solid black;
-  padding: 15px;
+  padding:0px;
   margin: 10px;
 }
 
+h1,h2 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: rgb(42, 36, 48);
+  font-size: 30px;
+}
+
+.experienceList {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+flex-wrap: wrap;
+/* width: 500px; */
+
+}
+
+.experienceList li{
+ display: block;
+ background-color: rgb(210, 235, 235); 
+ border: 1px solid rgb(216, 202, 202);
+ padding: 15px;
+ margin: 10px;
+}
+/* 
+.rightLine{
+float:right;
+display:inline-block;
+}
+.center {
+justify-content: center;
+} */
+
+.skill-card{
+  width:100%;
+  display: flex !important;
+  ;
+
+  justify-content:space-between;
+}
+
+
+#skill li {
+  display: inline-block;
+  border: 3px solid blue;
+  padding: 10px;
+  margin: 20px;
+  width: 80px;
+} 
+
+.leave_Message {
+  font-size: 21px;
+  color: blueviolet;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 25px;
+  color: brown; 
+}
+
+textarea, input {
+  font-size: 21px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+
 .formField {
-   padding: 8px;
-   margin: 5px;
+  padding: 8px;
+  margin: 5px;
 }
 
 button {
-   margin-left: 10px;
-   padding: 10px;
-   width: 120px;
-   box-shadow: 10px 5px 5px rgb(57, 43, 43);
-   background-color: rgb(0, 0, 255);
-   border: 1px solid rgb(112, 120, 4);
-   border-radius: 15px;
-   font-weight: 700;
-   letter-spacing: 1px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 120px;
+  box-shadow: 10px 5px 5px rgb(57, 43, 43);
+  background-color: rgb(0, 0, 255);
+  border: 1px solid rgb(112, 120, 4);
+  border-radius: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 #message li {
-   display: table;
-   border-bottom: 2px solid black;
-   background-color: aquamarine;
+  display: table;
+  border-bottom: 2px solid black;
+  background-color: aquamarine;
 }
 
 #myFooter {
-   background-color: rgb(214, 237, 237);
-   word-spacing: 2px;
+  background-color: rgb(214, 237, 237);
+  word-spacing: 2px;
 }
 
 @media (max-width: 500px) {
-   body {
-     margin: 8px;
-   }
-   #skill li {
-       display: inline-block;
-       border: 3px solid blue;
-       padding: 10px;
-       margin: 10px;
-       width: 100px;
-       font-size: 30px;
-   } 
- }
-
- @media (max-width: 330px) {
-   .removeBtn {
-       margin-top: 8px;
-   }
- }
-
-
- @media (max-width: 400px) {
-  .photo {
-       border-radius: 30px;
+  body {
+    margin: 8px;
   }
+  #skill li {
+      display: inline-block;
+      border: 3px solid blue;
+      padding: 10px;
+      margin: 10px;
+      width: 100px;
+      font-size: 30px;
+  } 
+  .experienceList {
+    width: auto;
+  }
+
+
+@media (max-width: 330px) {
+  .removeBtn {
+      margin-top: 8px;
+  }
+}
+
+
+@media (max-width: 400px) {
+ .photo {
+      border-radius: 30px;
  }
+}
+}
+
+#man{
+float: right;
+height: 50px;
+width: auto;
+}
