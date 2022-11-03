@@ -85,24 +85,19 @@ messageList.appendChild(newMessage);
 
 });
 
-var githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/tamirulalan/repos")
-githubRequest.onload = function() {
-// var ourData= githubRequest.responseText
-var ourData =JSON.parse(githubRequest.responseText)
-getProject(ourData)
-//console.log(ourData)
-}
-githubRequest.send();
-
-const getProject=(data)=>{
-  var projectSection =document.getElementById("project")
-  var projectList = projectSection.querySelector("ul")
-  for(let i=0;i<data.length; i++){
-   const projectItem= document.createElement("li")
-   projectItem.innerHTML = data[i].name 
-   projectList.appendChild(projectItem)
-
+  const getProject=(data)=>{
+    var projectSection =document.getElementById("project")
+    var projectList = projectSection.querySelector("ul")
+    for(let i=0;i<data.length; i++){
+     const projectItem= document.createElement("li")
+     projectItem.innerHTML = data[i].name 
+     projectList.appendChild(projectItem)
+  
+    }
   }
 
-}
+fetch('https://api.github.com/users/tamirulalan/repos')
+  .then((response) => response.json())
+  .then((data) =>{
+    console.log(data);
+    getProject(data)})
