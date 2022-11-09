@@ -1,15 +1,14 @@
-const today = new Date();
+//==creating copyRight and date at the left side of footer 
+const today = new Date(); //using inbuint function Date()
 const thisYear =today.getFullYear();
- const man =document.querySelector("#myFooter");
- const paragraph =document.createElement('p');
- //paragraph.textContent =
+ const man =document.querySelector("#myFooter"); //get the footer element by id
+ const paragraph =document.createElement('p');//getting p tags using its tag name
  
-paragraph.innerHTML = 'Copyright &copy;' + thisYear + ' Tamiru Taye';  
+paragraph.innerHTML = ' &copy;' + thisYear + ' Tamiru Taye';  
  man.appendChild(paragraph);
  
-
- //skill list
-const skill = ["Autocad", "Matlab", "CNC", "Java", "Python", "Eclipse"];
+ //====skill list====
+const skill = ["Js", "HTML", "CSS","Autocad", "Matlab", "CNC", "Java", "Python", "Eclipse"];
  const skillsSection = document.getElementById("skill");
  const skillslist = skillsSection.querySelector("ul");
  for (const s of skill) {
@@ -32,6 +31,10 @@ const messageSection= document.querySelector("#message");
 const messageList =messageSection.querySelector("ul");
 const newMessage=document.createElement("li");
 const removeButton=document.createElement("button");
+// if hidden, show the "messages" section
+if (messageSection.style.display === 'none') {
+  messageSection.style.display = 'block'
+}
 
 //create the editButton using createElement
  const editButton = document.createElement("button");
@@ -41,7 +44,6 @@ editButton.innerHTML = "Edit";
 editButton.addEventListener("click",function() {
   const Edit =editButton.parentNode;
   console.log(Edit);
-  //Edit.contentEditable = true;
   if(editButton.textContent === "Edit") {
     const span = Edit.childNodes[1];
     const input = document.createElement("input");
@@ -60,9 +62,8 @@ editButton.addEventListener("click",function() {
     editButton.textContent = "Edit";
   }
 });
+
 //edit and save
-
-
 removeButton.setAttribute("class", "removeBtn"); //To set attribute of the class to its value
 const aTag = document.createElement("a");
 
@@ -85,19 +86,29 @@ messageList.appendChild(newMessage);
 
 });
 
-  const getProject=(data)=>{
-    var projectSection =document.getElementById("project")
-    var projectList = projectSection.querySelector("ul")
-    for(let i=0;i<data.length; i++){
-     const projectItem= document.createElement("li")
-     projectItem.innerHTML = data[i].name 
-     projectList.appendChild(projectItem)
-  
-    }
-  }
-
 fetch('https://api.github.com/users/tamirulalan/repos')
   .then((response) => response.json())
   .then((data) =>{
-    console.log(data);
+     console.log(data);
+    
+        
     getProject(data)})
+    
+  
+  const getProject=(data)=>{
+  var projectSection =document.getElementById("project")
+   var projectList = projectSection.querySelector("ul")
+   const filteredData = data.filter((repo) =>
+   repo.name.includes('intro-to-programming-cassiopeia')
+ )
+ for (let repository of filteredData) {
+  const projectItem = document.createElement('li')
+  projectItem.innerHTML = `<a class="link link--no-decor" href="${repository.html_url}">${repository.name}</a> :- is the potrtifolio I made during my study in Code The Dream created on ${today}`
+  projectList.appendChild(projectItem)
+  
+   }
+   }
+
+
+
+    
