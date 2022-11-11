@@ -1,26 +1,37 @@
-//==creating copyRight and date at the left side of footer 
-const today = new Date(); //using inbuint function Date()
+//==creating copyRight and date at the left side of footer =====
+/*==Get the date from Date()in buiult fuction then find this year using today date. */
+const today = new Date(); 
 const thisYear =today.getFullYear();
- const man =document.querySelector("#myFooter"); //get the footer element by id
- const paragraph =document.createElement('p');//getting p tags using its tag name
- 
+/*==Fetch the footer region using div id ="man" Use queryselector. Then create the paragraph div where we will overwrite this copwright*/
+ const man =document.querySelector("#myFooter"); 
+ const paragraph =document.createElement('p');
+
+/*append the paragraph to the div section under footer */
+
 paragraph.innerHTML = ' &copy;' + thisYear + ' Tamiru Taye';  
  man.appendChild(paragraph);
  
  //====skill list====
+
+ /* first list an array of skills */
 const skill = ["Js", "HTML", "CSS","Autocad", "Matlab", "CNC", "Java", "Python", "Eclipse"];
+/*then get sekill section and ul div from HTML using their id */
  const skillsSection = document.getElementById("skill");
  const skillslist = skillsSection.querySelector("ul");
- for (const s of skill) {
+ /*save these list of skills in one variable called s */
+ for(let i=0;i<skill.length; i++){
+  let s=skill[i]
+  /*create li where we have put these lists and append them */
   const line =document.createElement('li');
   line.innerHTML =s;
   skillslist.appendChild(line);
  };
+ //====contact section===
 const messageForm = document.querySelector(".leave_Message");
 messageForm.addEventListener("submit",(e)=>{
   e.preventDefault()
   const nameForm=e.target.name.value;
-  console.log(nameForm);
+  console.log(nameForm + "a");
   const emailForm=e.target.email.value;
   console.log(emailForm);
   const messageInput=e.target.message.value;
@@ -67,8 +78,8 @@ editButton.addEventListener("click",function() {
 removeButton.setAttribute("class", "removeBtn"); //To set attribute of the class to its value
 const aTag = document.createElement("a");
 
-aTag.href = `mailto:${emailForm}`;
-aTag.innerHTML = `${nameForm}`;
+aTag.href =""+ " mailto:" + emailForm +" ";
+aTag.innerHTML = nameForm + "";
 removeButton.innerText="remove";
 removeButton.addEventListener("click",function() {
   // const entry=e.target.parentNode
@@ -77,7 +88,7 @@ removeButton.addEventListener("click",function() {
 });
 
 const spanElement=document.createElement("span");
-spanElement.innerHTML=` wrote: ${messageInput} `;
+spanElement.innerHTML= ''+' wrote:'+ messageInput;
 newMessage.appendChild(aTag);
 newMessage.appendChild(spanElement);
 newMessage.appendChild(editButton);
